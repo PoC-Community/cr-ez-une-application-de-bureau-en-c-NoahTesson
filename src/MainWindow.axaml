@@ -19,7 +19,6 @@
                     <StackPanel Orientation="Horizontal">
                         <CheckBox IsChecked="{Binding IsCompleted}" Margin="0,0,10,0"/>
                         <TextBlock Text="{Binding Title}" VerticalAlignment="Center"/>
-                        <TextBlock Text="gtrewgt" VerticalAlignment="Center"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

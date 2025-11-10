@@ -17,6 +17,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        loadTaskFromJson();
         TaskList.ItemsSource = _tasks;
 
         AddButton.Click += OnAddClick;
@@ -58,5 +59,20 @@ public partial class MainWindow : Window
 
         string filePath = Path.Combine(_directory, "tasks.json");
         File.WriteAllText(filePath, json);
+    }
+
+    private void loadTaskFromJson()
+    {
+        string filePath = Path.Combine(_directory, "tasks.json");
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            var tasks = JsonSerializer.Deserialize<ObservableCollection<TaskItem>>(json);
+            if (tasks != null)
+            {
+                _tasks = tasks;
+                TaskList.ItemsSource = _tasks;
+            }
+        }
     }
 }
