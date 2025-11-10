@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/milok/C--workshop-template/src/TodoListApp.csproj": {}
+    "/Users/noahtesson/Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/Epitech/Workshop/cr-ez-une-application-de-bureau-en-c-NoahTesson/src/TodoListApp.csproj": {}
   },
   "projects": {
-    "/home/milok/C--workshop-template/src/TodoListApp.csproj": {
+    "/Users/noahtesson/Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/Epitech/Workshop/cr-ez-une-application-de-bureau-en-c-NoahTesson/src/TodoListApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/milok/C--workshop-template/src/TodoListApp.csproj",
+        "projectUniqueName": "/Users/noahtesson/Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/Epitech/Workshop/cr-ez-une-application-de-bureau-en-c-NoahTesson/src/TodoListApp.csproj",
         "projectName": "TodoListApp",
-        "projectPath": "/home/milok/C--workshop-template/src/TodoListApp.csproj",
-        "packagesPath": "/home/milok/.nuget/packages/",
-        "outputPath": "/home/milok/C--workshop-template/src/obj/",
+        "projectPath": "/Users/noahtesson/Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/Epitech/Workshop/cr-ez-une-application-de-bureau-en-c-NoahTesson/src/TodoListApp.csproj",
+        "packagesPath": "/Users/noahtesson/.nuget/packages/",
+        "outputPath": "/Users/noahtesson/Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/Epitech/Workshop/cr-ez-une-application-de-bureau-en-c-NoahTesson/src/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/milok/.nuget/NuGet/NuGet.Config"
+          "/Users/noahtesson/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -79,11 +79,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
+              "version": "[8.0.21, 8.0.21]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.20, 8.0.20]"
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
             }
           ],
           "frameworkReferences": {
@@ -91,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

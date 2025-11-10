@@ -12,7 +12,16 @@
             <Button x:Name="AddButton" Content="Add" Margin="10,0,0,0" Width="80"/>
         </StackPanel>
 
-        <ListBox x:Name="TaskList" Height="300"/>
+        <ListBox x:Name="TaskList" Height="300">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataTemplate="{model:TaskItem}">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsCompleted}" Margin="0,0,10,0"/>
+                        <TextBlock Text="{Binding Title}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <Button x:Name="DeleteButton" Content="Delete selected" Margin="0,10,0,0"/>
     </StackPanel>
