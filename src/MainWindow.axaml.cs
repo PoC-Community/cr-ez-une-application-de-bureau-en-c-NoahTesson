@@ -3,11 +3,16 @@ using Avalonia.Interactivity;
 using System.Collections.ObjectModel;
 using TodoListApp.Models;
 
+using System;
+using System.IO;
+using System.Text.Json;
+
 namespace TodoListApp;
 
 public partial class MainWindow : Window
 {
     private ObservableCollection<TaskItem> _tasks = new();
+    private const string _directory = "data";
 
     public MainWindow()
     {
@@ -43,6 +48,15 @@ public partial class MainWindow : Window
     
     private void OnSaveToJsonClick(object? sender, RoutedEventArgs e)
     {
+        if (!Directory.Exists(_directory))
+        {
+            Directory.CreateDirectory(_directory);
+        }
 
+        var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+        string json = JsonSerializer.Serialize(_tasks, jsonOptions);
+
+        string filePath = Path.Combine(_directory, "tasks.json");
+        File.WriteAllText(filePath, json);
     }
 }
