@@ -31,9 +31,12 @@ public partial class MainWindow : Window
 
     private void OnDeleteClick(object? sender, RoutedEventArgs e)
     {
-        if (TaskList.SelectedItem is TaskItem selected)
+        for (int i = _tasks.Count -1; i >= 0; i--)
         {
-            _tasks.Remove(selected);
+            if (_tasks[i].IsCompleted == true)
+            {
+                _tasks.RemoveAt(i);
+            }
         }
     }
 }
