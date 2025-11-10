@@ -16,6 +16,7 @@ public partial class MainWindow : Window
 
         AddButton.Click += OnAddClick;
         DeleteButton.Click += OnDeleteClick;
+        SaveToJson.Click += OnSaveToJsonClick;
     }
 
     private void OnAddClick(object? sender, RoutedEventArgs e)
@@ -38,5 +39,10 @@ public partial class MainWindow : Window
                 _tasks.RemoveAt(i);
             }
         }
+    }
+    
+    private void OnSaveToJsonClick(object? sender, RoutedEventArgs e)
+    {
+
     }
 }
