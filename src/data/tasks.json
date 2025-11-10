@@ -1,17 +1,20 @@
 [
   {
-    "Id": "8f8d6eea-a608-46a4-ab19-fbc65c000ec7",
-    "Title": "frew",
-    "IsCompleted": false
+    "Id": "beb82cfe-59bb-42b6-87aa-cc308affc273",
+    "Title": "ergtr",
+    "IsCompleted": false,
+    "Tags": [
+      "grtw"
+    ],
+    "TagsDisplay": "grtw"
   },
   {
-    "Id": "37d435bb-90cb-43d1-9198-bf650b4adbb1",
-    "Title": "task 1",
-    "IsCompleted": false
-  },
-  {
-    "Id": "7e50d4e6-002e-46f4-a1ca-eaeb19dd85f2",
-    "Title": "task 2",
-    "IsCompleted": false
+    "Id": "4ff268e8-47b8-45f7-a877-4ca43b0f7477",
+    "Title": "wregr",
+    "IsCompleted": false,
+    "Tags": [
+      "tags 1"
+    ],
+    "TagsDisplay": "tags 1"
   }
 ]

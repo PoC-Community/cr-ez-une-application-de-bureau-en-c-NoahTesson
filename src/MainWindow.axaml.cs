@@ -3,6 +3,7 @@ using Avalonia.Interactivity;
 using System.Collections.ObjectModel;
 using TodoListApp.Models;
 
+using System.Linq;
 using System;
 using System.IO;
 using System.Text.Json;
@@ -23,17 +24,24 @@ public partial class MainWindow : Window
         AddButton.Click += OnAddClick;
         DeleteButton.Click += OnDeleteClick;
         SaveToJson.Click += OnSaveToJsonClick;
+        TagFilter.SelectionChanged += OnTagFilterChanged;
+
+        LoadTagsIntoFilter();
     }
 
     private void OnAddClick(object? sender, RoutedEventArgs e)
     {
-        if (!string.IsNullOrWhiteSpace(TaskInput.Text))
-        {
-            var item = new TaskItem { Title = TaskInput.Text, IsCompleted = false };
+        if (string.IsNullOrWhiteSpace(TaskInput.Text))
+            return;
 
-            _tasks.Add(item);
-            TaskInput.Text = string.Empty;
-        }
+        var item = new TaskItem { Title = TaskInput.Text };
+        item.SetTagsFromString(TagInput.Text ?? string.Empty);
+        _tasks.Add(item);
+
+        TaskInput.Text = string.Empty;
+        TagInput.Text = string.Empty;
+
+        LoadTagsIntoFilter();
     }
 
     private void OnDeleteClick(object? sender, RoutedEventArgs e)
@@ -74,5 +82,28 @@ public partial class MainWindow : Window
                 TaskList.ItemsSource = _tasks;
             }
         }
+    }
+
+    private void OnTagFilterChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        string? selectedTag = TagFilter.SelectedItem as string;
+
+        if (string.IsNullOrWhiteSpace(selectedTag) || selectedTag == "All")
+        {
+            TaskList.ItemsSource = _tasks;
+        }
+        else
+        {
+            var filtered = _tasks.Where(t => t.Tags.Contains(selectedTag)).ToList();
+            TaskList.ItemsSource = filtered;
+        }
+    }
+
+    private void LoadTagsIntoFilter()
+    {
+        var allTags = _tasks.SelectMany(t => t.Tags).Distinct().OrderBy(t => t).ToList();
+        allTags.Insert(0, "All");
+        TagFilter.ItemsSource = allTags;
+        TagFilter.SelectedIndex = 0;
     }
 }
